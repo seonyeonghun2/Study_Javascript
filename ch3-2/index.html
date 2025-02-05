@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기본문법</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="text-center">
+        <h1>반복문</h1>
+        <h2>loop</h2>
+        <p>특정 동작을 여러번 실행할때 사용합니다. 반복 수행하는 어떠한
+            코드를 간단하게 줄일수 있는 문법을 반복문 이라고 합니다.
+        </p>
+    </header>
+    <main>
+        <form class="mx-auto pos-relative" id="calc_form">
+            <fieldset>
+                <legend>누적합 계산기</legend>
+                <p class="hint">1부터 원하는 숫자값 까지 누적합을 계산해드립니다.</p>
+                <div>
+                    <label for="user_input">사용자 입력</label>
+                    <input type="number" id="user_input">
+                </div>
+                <input type="submit" value="계산">
+            </fieldset>
+            <fieldset id="result" class="pos-absolute text-center d-none">
+                <legend>결과</legend>
+                <div id="final">
+                    
+                </div>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>copyright &copy; hanul.</p>
+    </footer>
+    <script src="loop.js"></script>
+</body>
+</html>
