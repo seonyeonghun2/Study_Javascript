@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 되새김문제</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>16장 되새김 문제(p.553)</h1>
+    <p>숫자를 입력하면, 4의 배수인지 아닌지 판단하고,
+        그 결과를 출력하는 웹프로그램 작성
+    </p>
+    <p>단, 책에서는 prompt()를 사용했지만! 우리는 UI를
+        적당하게 스케치하고, 그 결과를 웹으로 볼수 있게
+        만들기로 합니다.
+    </p>
+    <div id="quiz">
+        <form id="quiz_form">
+            <fieldset>
+                <legend>4의 배수 판별기</legend>
+                <div class="row-container d-flex gap-1">
+                    <label for="user_number">숫자 입력</label>
+                    <input type="number" name="user_number" id="user_number" placeholder="숫자를 하나 입력하세요">
+                </div>
+                <input type="submit" value="확인">
+            </fieldset>
+        </form>
+    </div>
+    <div id="result" class="d-none">
+        실행결과
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
