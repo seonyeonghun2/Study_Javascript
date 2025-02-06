@@ -19,8 +19,6 @@ switch (select) {
 document.write("동물 울음소리 재생을 중지합니다.")
 */
 
-
-
 // 국, 영, 수 과목의 점수를 입력받고,
 // 성적의 평균과 등급을 출력하는 간단한(=prmpt() 함수)
 // 프로그램을 작성해보세요!
@@ -32,21 +30,47 @@ document.write("동물 울음소리 재생을 중지합니다.")
 // 71 ~ 80 : c 학점
 // ....등등..
 
-// prompt() : null 이거나 사용자의 입력 문자열 반환하는 함수!!
-let kor = Number(prompt("국어 점수를 입력하세요", "예) 100점 --> 100 입력"));
-let eng = Number(prompt("영어 점수를 입력하세요", "예) 100점 --> 100 입력"));
-let math = Number(prompt("수학 점수를 입력하세요", "예) 100점 --> 100 입력"));
+while (true) {
+  let yourSelect = prompt(
+    "어떤 작업을 수행하시겠습니까?",
+    "i : 성적입력, h: 도움말, q: 프로그램 종료"
+  );
+  if (yourSelect.toLowerCase() == "i") {
+    // 아까 그거..여기에
+    // prompt() : null 이거나 사용자의 입력 문자열 반환하는 함수!!
+    let kor = Number(
+      prompt("국어 점수를 입력하세요", "예) 100점 --> 100 입력")
+    );
+    let eng = Number(
+      prompt("영어 점수를 입력하세요", "예) 100점 --> 100 입력")
+    );
+    let math = Number(
+      prompt("수학 점수를 입력하세요", "예) 100점 --> 100 입력")
+    );
 
-// + 연산자 : (1) 숫자를 덧셈연산   (2) 문자를 연결하는 연산
+    // + 연산자 : (1) 숫자를 덧셈연산   (2) 문자를 연결하는 연산
+    // 줄 주석 적용 및 해제 : CTRL + /
+    /* 여러줄
+    주석
+    적용 및 해졔 : SHIFT + ALT + A
+*/
+    let sum = kor + eng + math; // 100+90+90 --> 280 : number
+    let avg = parseInt(sum / 3); // 나눗셈 연산 ==> 소수 발생 ==> Math 객체 : 올림, 버림, 반올림,..
 
-let sum = kor + eng + math; // 100+90+90 --> 280 : number
-let avg = parseInt(sum / 3); // 나눗셈 연산 ==> 소수 발생 ==> Math 객체 : 올림, 버림, 반올림,..
-
-if (avg >= 90) {
-    alert("A등급 입니다.");
-} else if(avg >= 81 && avg < 90) {
-    alert("B등급 입니다.");
-} else {
-    alert("F등급 입니다.")
-} 
-
+    if (avg >= 90) {
+      alert("A등급 입니다.");
+    } else if (avg >= 81 && avg < 90) {
+      alert("B등급 입니다.");
+    } else {
+      alert("F등급 입니다.");
+    }
+  } else if (yourSelect.toLowerCase() === "h") {
+    alert("도움말 페이지로 이동합니다");
+    location.href = "help.html";
+  } else if (yourSelect === "q") {
+    alert("프로그램을 종료합니다");
+    break;
+  } else {
+    alert("성적입력은 i, 도움말은 h, 프로그램종료는 q를 눌러야 합니다");
+  }
+}
