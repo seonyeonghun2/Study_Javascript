@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.pos-absolute {
+    position: absolute
+}
+.pos-relative {
+    position: relative
+}
+
+.process_container {
+    right: .5rem;
+    top: .5rem
+}
