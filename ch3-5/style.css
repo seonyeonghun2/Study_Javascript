@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+.box {
+    border: 1px solid black;
+    flex: 1;
+}
