@@ -92,22 +92,29 @@ const btn11 = document.querySelector(".btn11");
 const btn12 = document.querySelector(".btn12");
 const btn13 = document.querySelector(".btn13");
 const btn14 = document.querySelector(".btn14");
+const btn15 = document.querySelector(".btn15");
 
-
-
+// 최초 입력상태 : 참 or 거짓
+let initInput = true; 
 let statement = "";
+
 
 calcForm.addEventListener("submit", function(e){
     e.preventDefault(); 
+    showSolution();
 });
 
-btn1.addEventListener("click", function(){
-    // 숫자 --> 클릭 횟수에 따라 1, 11, 111 처리, 누른횟수 체크!!
-    // 문자 --> 덧셈 연산, "1", "11", "111" --> 연산을 위해 Number() 처리
-    // 현재 기본값(value) : 0
-    statement += 1;
-    result.value = statement;
-    
+btn1.addEventListener("click", function(){ // 숫자 1
+    if (initInput) {
+        // 최초 입력상태라면, 수행할 코드
+        statement += 1;
+        result.value = statement;
+    } else {
+        // 최초 입력 아니라면 (+,-,*,/) 수행할 코드
+        // 결과창에 있던 값을 지우고 (이전 입력값을 초기화 x ==> 어딘가에 임시로 저장)
+        result.value = "1";
+        //연속으로 누르는건지 그렇다면
+    }
 });
 btn2.addEventListener("click", function(){
     // 숫자 --> 클릭 횟수에 따라 1, 11, 111 처리, 누른횟수 체크!!
@@ -163,16 +170,33 @@ btn10.addEventListener("click", function(){
     // 현재 기본값(value) : 0
     result.value += "0"; 
 });
-btn11.addEventListener("click", function(){
-    // + 를 누르면, #process의 값으로 입력
+btn11.addEventListener("click", function(){ // 덧셈
+    initInput = !initInput;
     process.value = result.value + "+";
+
 });
-btn12.addEventListener("click", function(){
+btn12.addEventListener("click", function(){ // 뺄셈
     console.log("-");
 });
-btn13.addEventListener("click", function(){
+btn13.addEventListener("click", function(){ // 곱셈
     console.log("*");
 });
-btn14.addEventListener("click", function(){
+btn14.addEventListener("click", function(){ // 나눗셈
     console.log("/");
 });
+// btn15는 submit 버튼(=) 으로 대체
+// btn15.addEventListener("click", function(){ // 결과버튼(=)
+//     if (!initInput) { // + 눌렀는지 체크 : false
+//         let output = `${parseInt(process.value) + parseInt(result.value)}`;
+//         result.value = output;
+//     }
+// });
+
+
+function showSolution() {
+    //실행하려는 코드가, 아까 그것!
+    if (!initInput) { // + 눌렀는지 체크 : false
+        let output = `${parseInt(process.value) + parseInt(result.value)}`;
+        result.value = output;
+    }
+}
