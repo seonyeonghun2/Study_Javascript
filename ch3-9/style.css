@@ -1,0 +1,45 @@
+#container {
+    width: 500px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden
+}
+.plates {
+    position: absolute;
+    left: 0;
+    width: 1500px;
+    height: 300px;
+    transition: all .5s ease-in-out
+}
+.plate {
+    width: 500px;
+    min-height: 300px;
+}
+
+#green-plate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3
+}
+#orange-plate {
+    position: absolute;
+    left: 500px;
+    top: 0;
+    z-index: 2
+
+}
+#purple-plate {
+    position: absolute;
+    left:1000px;
+    top:0;
+    z-index: 1
+}
+
+.top {
+    z-index: 10 !important
+}
+
+.d-flex {
+    display: flex
+}
